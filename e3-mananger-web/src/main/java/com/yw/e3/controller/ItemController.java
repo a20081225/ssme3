@@ -49,4 +49,32 @@ public class ItemController {
         E3Result result = itemService.addItem(item, desc);
         return result;
     }
+
+    @RequestMapping(value = "/item/update",method = RequestMethod.POST)
+    @ResponseBody
+    public E3Result updateItem(TbItem item,String desc){
+        E3Result result = itemService.updateItem(item, desc);
+        return result;
+    }
+
+    @RequestMapping(value = "/item/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public E3Result deleteItem(String ids){
+        E3Result result = itemService.deleteItem(ids);
+        return result;
+    }
+
+    @RequestMapping(value = "/item/instock",method = RequestMethod.POST)
+    @ResponseBody
+    public E3Result instockItem(String ids){
+        E3Result result = itemService.instockItem(ids);
+        return result;
+    }
+
+    @RequestMapping(value = "/item/reshelf",method = RequestMethod.POST)
+    @ResponseBody
+    public E3Result reshelfItem(String ids){
+        E3Result result = itemService.reshelfItem(ids);
+        return result;
+    }
 }

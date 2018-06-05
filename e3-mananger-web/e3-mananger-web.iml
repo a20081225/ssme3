@@ -45,6 +45,7 @@
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.3" level="project" />
     <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
     <orderEntry type="library" name="Maven: cn.bestwu:fastdfs-client-java:1.27" level="project" />
+    <orderEntry type="module" module-name="e3-content-interface" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.14.RELEASE" level="project" />

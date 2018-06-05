@@ -9,6 +9,7 @@ import com.yw.e3.mapper.TbItemDescMapper;
 import com.yw.e3.mapper.TbItemMapper;
 import com.yw.e3.pojo.TbItem;
 import com.yw.e3.pojo.TbItemDesc;
+import com.yw.e3.pojo.TbItemDescExample;
 import com.yw.e3.pojo.TbItemExample;
 import com.yw.e3.pojo.TbItemExample.Criteria;
 import com.yw.e3.service.ItemService;
@@ -74,6 +75,56 @@ public class ItemServiceImpl implements ItemService {
         itemDesc.setCreated(new Date());
         itemDesc.setUpdated(new Date());
         itemDescMapper.insert(itemDesc);
+        return E3Result.ok();
+    }
+
+    @Override
+    public E3Result updateItem(TbItem item, String desc) {
+        Long itemId = item.getId();
+        itemMapper.updateByPrimaryKeySelective(item);
+        TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+        itemDesc.setItemDesc(desc);
+        itemDescMapper.updateByPrimaryKeySelective(itemDesc);
+        return E3Result.ok();
+    }
+
+    @Override
+    public E3Result deleteItem(String ids) {
+        String[] idArray = ids.split(",");
+        List<Long> list = null;
+        for (String s : idArray) {
+            list.add(Long.valueOf(s));
+        }
+        TbItemExample itemExample = new TbItemExample();
+        Criteria criteria = itemExample.createCriteria();
+        criteria.andIdIn(list);
+        itemMapper.deleteByExample(itemExample);
+        TbItemDescExample itemDescExample = new TbItemDescExample();
+        TbItemDescExample.Criteria criteria2 = itemDescExample.createCriteria();
+        criteria2.andItemIdIn(list);
+        itemDescMapper.deleteByExample(itemDescExample);
+        return E3Result.ok();
+    }
+
+    @Override
+    public E3Result instockItem(String ids) {
+        String[] idArray = ids.split(",");
+        for (String id : idArray) {
+            TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
+            item.setStatus((byte) 2);//1-正常，2-下架，3-删除
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
+        return E3Result.ok();
+    }
+
+    @Override
+    public E3Result reshelfItem(String ids) {
+        String[] idArray = ids.split(",");
+        for (String id : idArray) {
+            TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
+            item.setStatus((byte) 1);//1-正常，2-下架，3-删除
+            itemMapper.updateByPrimaryKeySelective(item);
+        }
         return E3Result.ok();
     }
 }

@@ -8,4 +8,8 @@ public interface ItemService {
     TbItem getItemById(Long itemId);
     DataGridResult getItemList(int page,int rows);
     E3Result addItem(TbItem item,String desc);
+    E3Result updateItem(TbItem item,String desc);
+    E3Result deleteItem(String ids);
+    E3Result instockItem(String ids);
+    E3Result reshelfItem(String ids);
 }

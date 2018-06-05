@@ -28,6 +28,9 @@
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.3" />
           <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
           <element id="library" level="project" name="Maven: cn.bestwu:fastdfs-client-java:1.27" />
+          <element id="archive" name="e3-content-interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="e3-content-interface" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.14.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.14.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.14.RELEASE" />
