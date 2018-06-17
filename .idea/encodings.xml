@@ -3,7 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/e3-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-content" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/e3-content-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-content/e3-content-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-content/e3-content-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-manager" charset="UTF-8" />
@@ -14,5 +13,9 @@
     <file url="file://$PROJECT_DIR$/e3-mananger-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e3-portal-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e3-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e3-search-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e3-search/e3-search-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e3-search/e3-search-service" charset="UTF-8" />
   </component>
 </project>
