@@ -16,7 +16,7 @@ public class SearchServiceImpl implements SearchService {
     private SearchDao searchDao;
 
     @Override
-    public SearchResult search(String keywords, int page, int rows) {
+    public SearchResult search(String keywords, int page, int rows) throws Exception {
         SolrQuery solrQuery = new SolrQuery();
         solrQuery.setQuery(keywords);
         if (page <= 0){

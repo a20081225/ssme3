@@ -8,8 +8,13 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-
+    <!--单机-->
     <bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
         <constructor-arg name="builder" value="http://192.168.233.128:8080/solr/new_core"/>
     </bean>
+    <!--集群-->
+    <!--<bean id="cloudSolrClient" class="org.apache.solr.client.solrj.impl.CloudSolrClient">-->
+        <!--<constructor-arg name="builder" value="192.168.233.128:2281,192.168.233.128:2382,192.168.233.128:2483"></constructor-arg>-->
+        <!--<property name="defaultCollection" value="new_core2"></property>-->
+    <!--</bean>-->
 </beans>

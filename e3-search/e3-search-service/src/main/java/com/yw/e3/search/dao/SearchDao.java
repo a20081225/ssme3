@@ -24,8 +24,7 @@ public class SearchDao {
     @Autowired
     private SolrClient solrClient;
 
-    public SearchResult searchResult(SolrQuery solrQuery){
-        try {
+    public SearchResult searchResult(SolrQuery solrQuery) throws Exception{
             QueryResponse queryResponse =solrClient.query(solrQuery);
             SolrDocumentList solrDocumentList = queryResponse.getResults();
             long numFound = solrDocumentList.getNumFound();
@@ -54,11 +53,6 @@ public class SearchDao {
             result.setItemList(itemList);
             return result;
 
-        } catch (SolrServerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+
     }
 }

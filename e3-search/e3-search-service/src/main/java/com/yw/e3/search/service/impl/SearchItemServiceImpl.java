@@ -24,9 +24,8 @@ public class SearchItemServiceImpl implements SearchItemService {
     private SolrClient solrClient;
 
     @Override
-    public E3Result importAllItems() {
+    public E3Result importAllItems() throws Exception {
         List<SearchItem> itemList = itemMapper.getItemList();
-        try {
             for (SearchItem item : itemList) {
                 SolrInputDocument document = new SolrInputDocument();
                 document.addField("id",item.getId());
@@ -39,12 +38,5 @@ public class SearchItemServiceImpl implements SearchItemService {
             }
             solrClient.commit();
             return E3Result.ok();
-        } catch (SolrServerException e) {
-            e.printStackTrace();
-            return E3Result.build(500,"Solr发生异常");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return E3Result.build(500,"导入失败");
-        }
     }
 }
