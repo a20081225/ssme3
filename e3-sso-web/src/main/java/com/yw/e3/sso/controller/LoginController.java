@@ -33,10 +33,12 @@ public class LoginController {
     @ResponseBody
     public E3Result register(String username, String password, HttpServletRequest request, HttpServletResponse response){
         E3Result e3Result = loginService.userLogin(username,password);
-        if (e3Result.getData() == 200){
+        if (e3Result.getStatus() == 200){
             String token = e3Result.getData().toString();
             CookieUtils.setCookie(request,response,TOKEN_KEY,token);
         }
         return  e3Result;
     }
+
+
 }

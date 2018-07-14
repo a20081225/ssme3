@@ -22,7 +22,7 @@ public class TokenServiceImpl implements TokenService {
     private Integer SESSION_EXPIRE;
     @Override
     public E3Result getUserByToken(String token) {
-        String json = jedisClient.get("SESSION:" + token);
+        String json = jedisClient.get("session:" + token);
         if (StringUtils.isBlank(json)){
             return E3Result.build(400,"用户登录过期");
         }

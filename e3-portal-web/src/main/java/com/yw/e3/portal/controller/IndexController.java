@@ -26,4 +26,9 @@ public class IndexController {
         model.addAttribute("adv1List",adv1List);
         return "index";
     }
+
+    @RequestMapping("/page/logout")
+    public String logout(){
+        return "index";
+    }
 }
